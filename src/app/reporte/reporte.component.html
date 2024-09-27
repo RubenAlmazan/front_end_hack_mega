@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card de Dashboard</title>
+
+</head>
+
+<body>
+    
+    <div class="card">
+        <div class="card-header" (click)="toggleBody()">
+            <div class="header-left" *ngIf="datos">
+                
+                <h1>Cuadrilla Num. {{datos.nombre}} </h1>
+                <p>Fecha contemplada: 01/01/2024 - 07/01/2024</p>
+            </div>
+            <div class="header-right">
+                <p>Total de puntos: 80</p>
+                <p style="font-size: 24px;"> <b> Cantidad de dinero: $30 </b> </p>
+            </div>
+        </div>
+        <div class="card-body" #cardBody style="display: none;">
+            <div class="empleados-header" (click)="empleados()">
+                <h1 style="text-align: center;">Lista de empleados</h1>
+            </div>
+
+            <div *ngIf="showEmpleados">
+                <div class="chart">
+                    <table class="table-responsive">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Empleado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="ID">1</td>
+                                <td data-label="Empleado">Juan Pérez</td>
+                            </tr>
+                            <tr>
+                                <td data-label="ID">2</td>
+                                <td data-label="Empleado">Ana Gómez</td>
+                            </tr>
+                            <tr>
+                                <td data-label="ID">3</td>
+                                <td data-label="Empleado">Carlos López</td>
+                            </tr>
+                            <tr>
+                                <td data-label="ID">4</td>
+                                <td data-label="Empleado">María Sánchez</td>
+                            </tr>
+                            <tr>
+                                <td data-label="ID">5</td>
+                                <td data-label="Empleado">Luis Martínez</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="empleados-header" (click)="ordenes()">
+                <h1 style="text-align: center;">Ordenes realizadas</h1>
+            </div>
+
+            <div *ngIf="showOrdenes">
+                <div class="stats">
+                    <table class="table-responsive_2">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Fecha</th>
+                                <th>Suscriptor</th>
+                                <th>Puntos</th>
+                                <th>Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="ID">1</td>
+                                <td data-label="Fecha">2024-09-25</td>
+                                <td data-label="Suscriptor">Juan Pérez</td>
+                                <td data-label="Puntos">150</td>
+                                <td data-label="Detalle">
+                                    <button (click)="irADetalle()">Ver Detalle</button> <!-- Botón para redirigir -->
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td data-label="ID">2</td>
+                                <td data-label="Fecha">2024-09-26</td>
+                                <td data-label="Suscriptor">Ana Gómez</td>
+                                <td data-label="Puntos">75</td>
+                                <td data-label="Detalle">Detalle del suscriptor 2</td>
+                            </tr>
+                            <tr>
+                                <td data-label="ID">3</td>
+                                <td data-label="Fecha">2024-09-27</td>
+                                <td data-label="Suscriptor">Carlos López</td>
+                                <td data-label="Puntos">20</td>
+                                <td data-label="Detalle">Detalle del suscriptor 3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

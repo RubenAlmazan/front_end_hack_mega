@@ -1,0 +1,192 @@
+<p>detalle-general works!</p>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e9ecef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 0;
+
+
+
+    }
+
+    /* Estilos de la tarjeta */
+    .card {
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 90%;
+        /* Usar un porcentaje para que sea responsivo */
+        max-width: 820px;
+        /* Máximo ancho para pantallas grandes */
+        background-color: #ffffff;
+        transition: transform 0.2s;
+
+    }
+
+    /* Encabezado de la tarjeta */
+    .card-header {
+        padding: 30px;
+        background-color: #007bff;
+        color: white;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        cursor: pointer;
+        position: relative;
+        transition: background-color 0.3s ease;
+    }
+
+    .card-header:hover {
+        background-color: #0056b3;
+    }
+
+    /* Contenedor del encabezado */
+    .header-left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header-right {
+        text-align: right;
+        margin-top: -10px;
+    }
+
+
+    table {
+        width: 100%;
+    }
+
+    /* Estilos de las tablas */
+    tbody td {
+        text-align: center;
+        vertical-align: middle;
+        padding: 2px;
+        /* Espaciado interno en celdas */
+        transition: background-color 0.3s ease;
+        /* Transición suave para cambios de color */
+
+    }
+
+    tbody tr:hover {
+        background-color: #f1f1f1;
+        /* Color de fondo al hacer hover sobre la fila */
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #ddf2f8;
+        /* Color de fondo alternativo para filas pares */
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+        /* Color de fondo para filas impares */
+    }
+
+    thead th {
+        background-color: white;
+        /* Color de fondo para el encabezado */
+        color: black;
+        /* Color del texto */
+        padding: 12px;
+        /* Espaciado interno en celdas del encabezado */
+        text-align: center;
+        /* Centrar texto en el encabezado */
+        font-weight: bold;
+        /* Negrita en el encabezado */
+    }
+
+
+    .informacion {
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <br>
+    <a href="reporte">regresar</a>
+    <br><br><br>
+
+    <div class="card">
+        <div class="card-header">
+            <!--<div class="header-left" *ngIf="datos">
+                <h1>Cuadrilla Num. {{datos.nombre}}</h1>
+            </div>-->
+            <div class="header-left" > </div>
+                <h1>Cuadrilla Num. 1234</h1>
+            </div>
+            <div class="header-right">
+                <p> Detalle de la orden de trabajo</p>
+                <p style="font-size: 24px;"> <b> Número de orden: 123 </b> </p>
+            </div>
+        </div>
+
+        <div class="informacion">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2" style="font-size: 20px;">Trabajo realizado</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th style="background-color: #007bff; color: white;">ID</th>
+                        <th style="background-color: #007bff; color: white;">Descripción del trabajo</th>
+                    </tr>
+                    <tr>
+                        <td data-label="ID">1</td>
+                        <td data-label="Trabajo">Instalación de equipo</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4" style="font-size: 20px;">Datos del suscriptor al que
+                            se le realizó el trabajo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th style="background-color: #007bff; color: white;">ID</th>
+                        <th style="background-color: #007bff; color: white;">Nombre</th>
+                        <th style="background-color: #007bff; color: white;">Teléfono</th>
+                        <th style="background-color: #007bff; color: white;">Domicilio</th>
+                    </tr>
+
+                    <tr>
+                        <td data-label="ID">1</td>
+                        <td data-label="Nombre">Aldair Ortiz</td>
+                        <td data-label="Teléfono">3311223344</td>
+                        <td data-label="Domicilio">Muy Muy Lejano 123 Colonia La Arrolladora</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2" style="font-size: 20px;">Empleado que realizó la
+                            orden</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th style="background-color: #007bff; color: white;">ID</th>
+                        <th style="background-color: #007bff; color: white;">Nombre</th>
+                    </tr>
+
+
+                    <tr>
+                        <td data-label="ID">1</td>
+                        <td data-label="Nombre">Montse Aguilar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>

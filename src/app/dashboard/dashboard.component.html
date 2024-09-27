@@ -1,42 +1,60 @@
 <!-- dashboard.component.html -->
+<style>
+  img {
+    width: 130px;
+    height: 130px;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
 <section class="p-6 bg-gray-50">
+
+  <p style="text-align: center; font-size: 35px; font-weight: bold;">Bienvenido al Sistema de Bonos MEGA</p>
+  <p style="text-align: center; font-size: 18px;"> Ingrese la opción de busqueda de su preferencia</p>
+
+  <br>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <!-- Ingresos Card -->
-    <div class="bg-white shadow p-4">
-      <h3 class="text-lg font-semibold mb-2">Ingresos</h3>
-      <p class="text-2xl font-bold">IDR 7.852.000</p>
-      <p class="text-gray-500 text-sm">Puntos obtenidos del 1-7 Oct, 2024</p>
-      <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg">
+    <div class="bg-white shadow p-4" style="text-align: center;">
+      <p class="text-3xl font-bold mb-3">General</p>
+      <img src="https://img.icons8.com/?size=100&id=3685&format=png&color=000000">
+      <!-- <button class="mt-4 bg-blue-500 text-white px-10 py-2 rounded-lg">
         Ver reporte
+      </button> -->
+      <button class="mt-4 bg-blue-500 text-white px-10 py-2 rounded-lg" (click)="general()">
+        Generar Reporte General
       </button>
     </div>
 
+
     <!-- Organizador de Tiempo -->
-    <div class="bg-white shadow p-4">
-      <h3 class="text-lg font-semibold mb-2">Organizador de tiempo</h3>
+    <div class="bg-white shadow p-4" style="text-align: center;">
+      <p class="text-3xl font-bold mb-3">Cuadrillas</p>
+      <img src="https://img.icons8.com/?size=100&id=3734&format=png&color=000000">
+
       <div class="relative">
-        <!-- Aquí insertaríamos el gráfico de anillo -->
-        <canvas id="timeChart"></canvas>
-        <span class="absolute top-10 left-10 text-sm text-gray-600"
-          >1.890 órdenes</span
-        >
+        <button class="mt-4 bg-blue-500 text-white px-10 py-2 rounded-lg" (click)="cuadrillas()">
+          Generar Reporte por Cuadrillas
+        </button>
       </div>
     </div>
 
     <!-- Rating de instaladores -->
-    <div class="bg-white shadow p-4">
-      <h3 class="text-lg font-semibold mb-2">
-        Cuadrilla de instaladores más rápidos
-      </h3>
+    <div class="bg-white shadow p-4" style="text-align: center;">
+      <p class="text-3xl font-bold mb-3">Empleado</p>
+      <img src="https://img.icons8.com/?size=100&id=11699&format=png&color=000000">
+
       <!-- Aquí insertaríamos el gráfico de burbujas -->
       <div class="relative">
-        <canvas id="ratingChart"></canvas>
+        <button class="mt-4 bg-blue-500 text-white px-10 py-2 rounded-lg" (click)="empleado()">
+          Ver Reporte por Empleado
+        </button>
       </div>
     </div>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-    <!-- Tipos de trabajos -->
+  <!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
     <div class="bg-white shadow p-4">
       <h3 class="text-lg font-semibold mb-2">Tipos de trabajos</h3>
       <ul>
@@ -59,7 +77,6 @@
       </ul>
     </div>
 
-    <!-- Ordenes -->
     <div class="bg-white shadow p-4">
       <h3 class="text-lg font-semibold mb-2">Order</h3>
       <p class="text-2xl font-bold">2.568</p>
@@ -68,5 +85,5 @@
         <canvas id="orderChart"></canvas>
       </div>
     </div>
-  </div>
+  </div>-->
 </section>

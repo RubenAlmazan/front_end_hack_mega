@@ -1,0 +1,206 @@
+/* Estilos del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
+
+/* Estilos de la tarjeta */
+.card {
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 90%; /* Usar un porcentaje para que sea responsivo */
+    max-width: 820px; /* Máximo ancho para pantallas grandes */
+    background-color: #ffffff;
+    transition: transform 0.2s;
+}
+
+
+
+/* Encabezado de la tarjeta */
+.card-header {
+    padding: 30px;
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.card-header:hover {
+    background-color: #0056b3;
+}
+
+.card-header h1 {
+    margin: 0;
+    font-size: 1.5rem; /* Tamaño relativo */
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-header p {
+    margin: 5px 0;
+    font-size: 1rem; /* Tamaño relativo */
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.card-header p:last-child {
+    margin-bottom: 0;
+}
+
+.card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 80px;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+    transform: translateX(-50%);
+}
+
+/* Contenedor del encabezado */
+.header-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-right {
+    text-align: right;
+    margin-top: -10px;
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+    padding: 20px;
+    display: none; /* Oculto por defecto */
+}
+
+/* Contenedores de gráficos y estadísticas */
+.stats-chart-container {
+    display: flex;
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    gap: 20px;
+}
+
+@media (min-width: 600px) {
+    .stats-chart-container {
+        flex-direction: row; /* Cambiar a fila en pantallas más grandes */
+    }
+}
+
+.stats,
+.chart {
+    flex: 1;
+}
+
+.stats table,
+.chart table {
+    width: 100%;
+}
+
+/* Estilos de las tablas */
+tbody td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px; /* Espaciado interno en celdas */
+    transition: background-color 0.3s ease; /* Transición suave para cambios de color */
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1; /* Color de fondo al hacer hover sobre la fila */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ddf2f8; /* Color de fondo alternativo para filas pares */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* Color de fondo para filas impares */
+}
+
+thead th {
+    background-color: #007bff; /* Color de fondo para el encabezado */
+    color: white; /* Color del texto */
+    padding: 12px; /* Espaciado interno en celdas del encabezado */
+    text-align: center; /* Centrar texto en el encabezado */
+    font-weight: bold; /* Negrita en el encabezado */
+}
+
+.table-responsive,
+.table-responsive_2 {
+    width: 100%;
+    overflow-x: auto; /* Habilita el scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* Mejora la experiencia en dispositivos táctiles */
+    border: 2px solid #ddd; /* Borde suave alrededor de la tabla */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 20px; /* Espacio debajo de las tablas */
+}
+
+/* Estilos adicionales para la tabla de estadísticas */
+.stats table,
+.chart table {
+    border-collapse: collapse; /* Colapsar bordes para mejor visualización */
+    width: 100%; /* Asegurar que la tabla use el ancho completo */
+}
+
+/* Estilos de la tabla de empleados */
+.chart img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Contenedor de empleados */
+.empleados-container {
+    border-radius: 20px;
+    background-color: #ffffff; /* Fondo blanco para el contenedor */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Espacio entre el encabezado de la tarjeta y la lista de empleados */
+    padding: 20px; /* Espaciado interno */
+}
+
+.empleados-header {
+    padding: 15px;
+    background-color: #007bff; /* Color de fondo del encabezado de empleados */
+    color: white;
+    border-radius: 20px; /* Bordes redondeados para el encabezado */
+    margin-bottom: 15px; /* Espacio entre el encabezado y la tabla */
+}
+
+.empleados-header:hover {
+    background-color: #0056b3;
+}
+
+.empleados-header h1 {
+    margin: 0;
+    font-size: 1.5rem; /* Tamaño relativo */
+}
+
+/* Media Queries para mejorar la responsividad */
+@media (max-width: 600px) {
+    .card-header h1 {
+        font-size: 1.2rem; /* Ajustar tamaño del encabezado en pantallas pequeñas */
+    }
+    .card-header p {
+        font-size: 0.9rem; /* Ajustar tamaño de texto en pantallas pequeñas */
+    }
+    
+    .empleados-header h1 {
+        font-size: 1.2rem; /* Ajustar tamaño del encabezado de empleados */
+    }
+    
+    .card {
+        padding: 15px; /* Espaciado interno en pantallas pequeñas */
+    }
+}

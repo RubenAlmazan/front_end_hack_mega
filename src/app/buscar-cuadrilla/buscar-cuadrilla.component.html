@@ -1,0 +1,21 @@
+<body>
+    <a href="dashboard">Regresar</a>
+    <div class="card">
+        
+        <br>
+        <img src="mega.jpg">
+
+        <p style="font-size: 35px; font-weight: bold;">Sistema de Bonos por Cuadrilla</p>
+        <p style=" font-size: 20px;"> Ingrese el Número de la Cuadrilla que quiera consultar.</p>
+        <br>
+        <form (ngSubmit)="onSubmit()">
+            <!-- Nombre -->
+            <input type="number" id="nombre" [(ngModel)]="nombre" name="nombre" required>
+            <br>
+
+            <!-- Botón de Enviar -->
+            <button type="submit">Consultar Reporte de Cuadrilla</button>
+        </form>
+        <br>
+    </div>
+</body>
