@@ -12,18 +12,18 @@ import { FormsModule } from '@angular/forms';
 })
 export class BuscarEmpleadoComponent {
 
-  nombre: string = "";
+  num_empleado: string = "";
 
   constructor(private router:Router, private dataService: DataServiceService) {}
 
     onSubmit() {
-      if (this.nombre) {
-        console.log(this.nombre);
-        // Aquí puedes manejar el envío del formulario
+      if (this.num_empleado) {
+        
         const datos = {
-          nombre: this.nombre,
+          num_empleado: this.num_empleado,
         };
-        this.dataService.setDatos(datos);  // Guarda el objeto JSON en el servicio
+        localStorage.setItem('buscar_reporte_empleado', JSON.stringify(datos));  
+
         this.router.navigate(['reporte-empleado']);
         
       }

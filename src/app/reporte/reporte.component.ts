@@ -21,9 +21,8 @@ export class ReporteComponent implements OnInit{
   @ViewChild('cardBody') cardBody!: ElementRef;
 
   ngOnInit() {
-    this.datos = this.dataService.getDatos();  
-    console.log(this.datos);  
-    console.log(this.datos.nombre);
+    const datosGuardados = localStorage.getItem('buscar_reporte_cuadrilla');
+    this.datos = datosGuardados ? JSON.parse(datosGuardados) : null; 
   }
 
   toggleBody(): void {
@@ -41,10 +40,10 @@ export class ReporteComponent implements OnInit{
 
   irADetalle(): void {
     const datos = {
-      nombre: this.datos.nombre,
+      num_cuadrilla: this.datos.num_cuadrilla,
     };
-    this.dataService.setDatos(datos);
-    this.router.navigate(['detalle-orden']); // Usa paréntesis para llamar al método
+    localStorage.setItem('datos_reporte_cuadrilla', JSON.stringify(datos));
+    this.router.navigate(['detalle-orden']); 
   }
 
 }

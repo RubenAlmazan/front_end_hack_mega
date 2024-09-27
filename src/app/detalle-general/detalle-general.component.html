@@ -1,5 +1,3 @@
-<p>detalle-general works!</p>
-
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -9,9 +7,6 @@
         align-items: center;
         height: 100%;
         margin: 0;
-
-
-
     }
 
     /* Estilos de la tarjeta */
@@ -103,20 +98,26 @@
     .informacion {
         padding: 20px;
     }
+
+    .card-header h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        /* Tamaño relativo */
+        font-weight: 700;
+        line-height: 1.2;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
 </style>
 
 <body>
     <br>
-    <a href="reporte">regresar</a>
+    <a href="reporte-general">regresar</a>
     <br><br><br>
 
     <div class="card">
         <div class="card-header">
-            <!--<div class="header-left" *ngIf="datos">
-                <h1>Cuadrilla Num. {{datos.nombre}}</h1>
-            </div>-->
-            <div class="header-left" > </div>
-                <h1>Cuadrilla Num. 1234</h1>
+            <div class="header-left" *ngIf="datos">
+                <h1>Cuadrilla Num. {{datos.num_cuadrilla}}</h1>
             </div>
             <div class="header-right">
                 <p> Detalle de la orden de trabajo</p>
@@ -189,4 +190,5 @@
                 </tbody>
             </table>
         </div>
+    </div>
 </body>

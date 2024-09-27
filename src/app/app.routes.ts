@@ -7,6 +7,7 @@ import { BuscarCuadrillaComponent } from './buscar-cuadrilla/buscar-cuadrilla.co
 import { BuscarEmpleadoComponent } from './buscar-empleado/buscar-empleado.component';
 import { ReporteEmpleadoComponent } from './reporte-empleado/reporte-empleado.component';
 import { ReporteGeneralComponent } from './reporte-general/reporte-general.component';
+import { DetalleGeneralComponent } from './detalle-general/detalle-general.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Redirige la ruta vacía a 'home'
@@ -18,5 +19,6 @@ export const routes: Routes = [
   { path: 'buscar-empleado', component: BuscarEmpleadoComponent }, // Ruta para el componente Reporte
   { path: 'reporte-empleado', component: ReporteEmpleadoComponent }, // Ruta para el componente Reporte
   { path: 'reporte-general', component: ReporteGeneralComponent }, // Ruta para el componente Reporte
+  { path: 'detalle-general', component: DetalleGeneralComponent }, // Ruta para el componente Reporte
 
 ];

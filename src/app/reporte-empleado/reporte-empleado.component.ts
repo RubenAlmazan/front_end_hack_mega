@@ -15,8 +15,9 @@ export class ReporteEmpleadoComponent {
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit() {
-    this.datos = this.dataService.getDatos();  
-    console.log(this.datos);  
-    console.log(this.datos.nombre);
+    const datosGuardados = localStorage.getItem('buscar_reporte_empleado');
+    this.datos = datosGuardados ? JSON.parse(datosGuardados) : null; 
+
+    console.log('Aqui esta el numero de empleado para la API ', this.datos.num_empleado);
   }
 }

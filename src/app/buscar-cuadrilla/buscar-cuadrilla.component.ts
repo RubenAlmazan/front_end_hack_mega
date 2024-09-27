@@ -11,20 +11,20 @@ import { DataServiceService } from '../data-service.service';
   styleUrls: ['./buscar-cuadrilla.component.css'] // Corregido a 'styleUrls'
 })
 export class BuscarCuadrillaComponent {
-  nombre: string = "";
+  num_cuadrilla: string = "";
 
-  constructor(private router:Router, private dataService: DataServiceService) {}
+  constructor(private router: Router, private dataService: DataServiceService) { }
 
-    onSubmit() {
-      if (this.nombre) {
-        console.log(this.nombre);
-        // Aquí puedes manejar el envío del formulario
-        const datos = {
-          nombre: this.nombre,
-        };
-        this.dataService.setDatos(datos);  // Guarda el objeto JSON en el servicio
-        this.router.navigate(['reporte']);
-        
-      }
+  onSubmit() {
+    if (this.num_cuadrilla) {
+      const datos = {
+        num_cuadrilla: this.num_cuadrilla,
+      };
+      //this.dataService.setDatos(datos);  // Guarda el objeto JSON en el servicio
+      localStorage.setItem('buscar_reporte_cuadrilla', JSON.stringify(datos));
+
+      this.router.navigate(['reporte']);
+
     }
+  }
 }

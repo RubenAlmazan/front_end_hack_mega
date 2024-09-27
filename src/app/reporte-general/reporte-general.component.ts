@@ -8,7 +8,7 @@ import { DataServiceService } from '../data-service.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './reporte-general.component.html',
-  styleUrl: './reporte-general.component.css'
+  styleUrls: ['./reporte-general.component.css']
 })
 export class ReporteGeneralComponent {
   datos: any = {};
@@ -18,19 +18,19 @@ export class ReporteGeneralComponent {
   constructor(private router: Router, private dataService: DataServiceService) {}
 
   ngOnInit() {
-    this.datos = this.dataService.getDatos();
-    this.showBodies = new Array(this.elementos.length).fill(false); // Inicializar el array con `false` para todas las tarjetas
+    this.showBodies = new Array(this.elementos.length).fill(false); 
   }
 
   toggleBody(index: number): void {
-    this.showBodies[index] = !this.showBodies[index]; // Alternar visibilidad
+    this.showBodies[index] = !this.showBodies[index]; 
   }
 
-  irADetalle(): void {
+  irADetalle(cuadrilla: number): void {
     const datos = {
-      nombre: this.datos.nombre,
+      num_cuadrilla: cuadrilla,
     };
-    this.dataService.setDatos(datos);
-    this.router.navigate(['detalle-orden']);
+
+    localStorage.setItem('datos_reporte_general', JSON.stringify(datos));  
+    this.router.navigate(['detalle-general']);
   }
 }
