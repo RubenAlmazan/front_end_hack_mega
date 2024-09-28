@@ -50,18 +50,23 @@ Generar un reporte semanal que incluya información sobre las órdenes completad
 Este sistema está compuesto por cinco componentes fundamentales, los cuales son:
 
 Login
+
 -> En este punto, el usuario podrá ingresar al sistema utilizando sus credenciales 
 
 Dashborad principal
+
 -> En este punto, el usuario tendrá acceso a diversas opciones y podrá elegir la consulta de su preferencia.
 
 Reporte general
+
 -> En este punto,el usuario podrá visualizar los reportes semanales de todas las cuadrillas disponibles. Además, podrá consultar el detalle de cada orden de trabajo completada.
 
 Reporte por cuadrilla
+
 -> En este punto, el usuario podrá consultar el reporte semanal de una cuadrilla específica. Tras seleccionar esta opción, se le mostrará una pantalla en la que deberá ingresar el número de cuadrilla. El sistema generará un reporte con todas las órdenes terminadas durante la semana, el personal que formó parte de la cuadrilla y el bono económico obtenido.
 
 Reporte por empleado
+
 -> En este punto, el usuario podrá consultar el historial de bonos de un colaborador específico. Al seleccionar esta opción, se le pedirá ingresar un número de empleado, y el sistema mostrará un reporte con todos los bonos obtenidos por dicho colaborador.
 
 # Instrucciones para descargar y ejecutar
